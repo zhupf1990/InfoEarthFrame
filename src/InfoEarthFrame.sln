@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DFA48E27-7D53-4955-A722-3D91A7119BE7}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoEarthFrame.Core", "InfoEarthFrame.Core\InfoEarthFrame.Core.csproj", "{17298EA0-AF73-4F30-B6F1-2066100D7D74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoEarthFrame.Application", "InfoEarthFrame.Application\InfoEarthFrame.Application.csproj", "{EDF5D964-4C0F-4F19-B674-58A38A5E5401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoEarthFrame.EntityFramework", "InfoEarthFrame.EntityFramework\InfoEarthFrame.EntityFramework.csproj", "{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoEarthFrame.Web", "InfoEarthFrame.Web\InfoEarthFrame.Web.csproj", "{897F6FD8-6F90-48E4-95A5-B4429B896205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoEarthFrame.WebApi", "InfoEarthFrame.WebApi\InfoEarthFrame.WebApi.csproj", "{5EB52D3D-09FD-463A-B02A-8D9856BD3724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoEarthFrame.Common", "InfoEarthFrame.Common\InfoEarthFrame.Common.csproj", "{05778394-9146-4D03-99EF-F43E8B420E80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Util", "Util", "{6FAEF6DE-C2AB-48E1-A18D-3DD78335ABFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoEarthFrame.Util.Offices", "InfoEarthFrame.Util.Offices\InfoEarthFrame.Util.Offices.csproj", "{83E27022-AC02-4031-8D14-9C314A830157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTelluro.WebApi.Filter", "iTelluro.WebApi.Filter\iTelluro.WebApi.Filter.csproj", "{BB8715D0-BD13-4FF1-9F74-6A0008DC7D35}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05778394-9146-4D03-99EF-F43E8B420E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05778394-9146-4D03-99EF-F43E8B420E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05778394-9146-4D03-99EF-F43E8B420E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05778394-9146-4D03-99EF-F43E8B420E80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83E27022-AC02-4031-8D14-9C314A830157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83E27022-AC02-4031-8D14-9C314A830157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83E27022-AC02-4031-8D14-9C314A830157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83E27022-AC02-4031-8D14-9C314A830157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB8715D0-BD13-4FF1-9F74-6A0008DC7D35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB8715D0-BD13-4FF1-9F74-6A0008DC7D35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB8715D0-BD13-4FF1-9F74-6A0008DC7D35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB8715D0-BD13-4FF1-9F74-6A0008DC7D35}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{83E27022-AC02-4031-8D14-9C314A830157} = {6FAEF6DE-C2AB-48E1-A18D-3DD78335ABFA}
+	EndGlobalSection
+EndGlobal

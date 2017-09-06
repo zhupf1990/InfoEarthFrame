@@ -1,0 +1,81 @@
+<!-- start: Show Or Hide Menu -->
+<div class="visible-md visible-lg" style="position: relative; padding: 12px 0; margin: 0; background-color: #646E7A; border-bottom: solid 1px #75808e; ">
+    <a href="#" class="sidebar-toggler-a pull-right-a" ng-class="{'menu-show-btn':!app.layout.isSidebarClosed,'menu-hide-btn':app.layout.isSidebarClosed}" ng-click="app.layout.isSidebarClosed = !app.layout.isSidebarClosed">
+        <i class="ti-align-justify" tooltip="菜单" tooltip-append-to-body></i>
+    </a>
+</div>
+<!-- end: Show Or Hide Menu -->
+<style>
+    
+.sub-menu i.mdi{
+    padding: 3px 15px;
+    font-size: 20px !important;
+}
+
+    ul.sub-menu li a{ padding-top:10px;
+                      padding-bottom:10px;
+    }
+
+    ul.sub-menu li ul.sub-menu li a{
+
+padding-left:100px !important;
+
+    }
+    
+    
+    
+    
+     .text-light-black, .mdi-set, [class^="mdi-"], [class*=" mdi-"] {
+        color: inherit !important;
+    }
+
+
+</style>
+
+<!-- start: MAIN NAVIGATION MENU -->
+<ul class="main-navigation-menu">
+    <li ng-repeat="item in menus" ng-class="{'active open':$state.includes(item.uiSref)}">
+        <!--ng-if判断----start-->
+        <a ng-if="item.children.length>0" href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <i class="{{item.icon}}"></i>
+                </div>
+                <div class="item-inner">
+                    <span class="title">{{item.title}}</span>
+                    <i class="icon-arrow" ng-show="item.children.length>0"></i>
+                </div>
+            </div>
+        </a>
+        <a ng-if="item.children.length===0" ui-sref="{{item.uiSref}}">
+            <div class="item-content">
+                <div class="item-media">
+                    <i class="{{item.icon}}"></i>
+                </div>
+                <div class="item-inner">
+                    <span class="title">{{item.title}}</span>
+                    <i class="icon-arrow" ng-show="item.children.length>0"></i>
+                </div>
+            </div>
+        </a>
+        <!--ng-if判断----end-->
+        <ul class="sub-menu" ng-show="item.children.length>0">
+            <li ng-repeat="bitem in item.children" ui-sref-active="active">
+                <a ng-if="bitem.children.length>0" href="javascript:void(0)">
+                    <i class="{{bitem.icon}}"></i><span class="title">{{bitem.title}}</span>
+                </a>
+                <a ng-if="bitem.children.length===0" ui-sref="{{bitem.uiSref}}">
+                    <i class="{{bitem.icon}}"></i><span class="title">{{bitem.title}}</span>
+                </a>
+                <ul class="sub-menu" ng-show="bitem.children.length>0">
+                    <li ng-repeat="citem in bitem.children" ui-sref-active="active">
+
+                        <a ui-sref="{{citem.uiSref}}"><span class="title">{{citem.title}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<!-- end: MAIN NAVIGATION MENU -->

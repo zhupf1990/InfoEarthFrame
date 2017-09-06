@@ -1,0 +1,89 @@
+{
+  "dashboard": {
+    "WELCOME": "欢迎{{appName}}"
+  },
+  "topbar": {
+    "messages": {
+    	"MAIN": "消息",
+      	"HEADER": "未阅读",
+      	"SEEALL": "所有"
+    },
+    
+    "activities": {
+      "MAIN": "代办任务",
+      "HEADER": "新的通知",
+      "SEEALL": "所有"
+    },
+    "user": {
+      "PROFILE": "我的简历",
+      "CALENDAR" : "我的日程",
+      "MESSAGES" : "我的消息",
+      "LOCKSCREEN" : "锁屏",
+      "LOGOUT" : "注销"
+    }
+  },
+  "offsidebar": {
+    "chat": {
+      "ONLINE": "在线",
+      "OFFLINE": "离线",
+      "BACK": "撤回",
+      "SEND" : "发送",
+      "PLACEHOLDER": "消息"
+    },
+    "favorites": {
+      "MAIN": "常用"
+    },
+    "settings": {
+      "MAIN": "设置",
+      "NOTIFICATIONS": "使用通知",
+      "SHOWEMAIL": "显示 E-mail",
+      "SHOWUSERS": "在线用户",
+      "EMAILALERT": "E-mail 提醒",
+      "SMSALERT": "SMS 提醒",
+      "SAVE" : "保存"     
+    }  
+  },
+  "sidebar": {
+    "heading": {
+      "NAVIGATION": "盗号",
+      "FEATURES": "Core Features",
+      "DOCUMENTATION": "Documentation"
+    },
+    "search": {
+      "PLACEHOLDER": "搜索..."
+    },
+    "nav": {
+      "dashboard": {
+        "MAIN": "主页"
+      },
+      "zawu": "杂物区",
+	   "new":{
+	     "MAIN":"项目",
+		 "NEW1":"项目1",
+		 "NEW2":"区域控件",
+		 "NEW3":"滑坡新增",
+		 "huapo":"滑坡列表",
+     "slopeList":"斜坡列表",
+        "slope": "斜坡新增",
+        "uploadFile": "文件上传"
+
+	  },
+	  "openlayer":{
+	     "MAIN":"一张图"
+	  }
+    }
+  },
+  "footer": {
+    "copyright": {
+    	"MAIN": "Copyright",
+      	"MESSAGE": "All rights reserved"
+    }
+  },
+  "setting": {
+  	"MAIN" : "样式设置",
+    "FIXEDHEADER": "固定头部",
+    "FIXEDSIDEBAR": "显示导航",
+    "CLOSEDSIDEBAR": "关闭导航",
+    "FIXEDFOOTER": "底部固定"
+  }
+}

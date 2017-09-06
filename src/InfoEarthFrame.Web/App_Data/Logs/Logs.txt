@@ -1,0 +1,25 @@
+DEBUG 2017-09-06 14:20:54,137 Abp.Modules.AbpModuleManager                                 - Loading Abp modules...  :行号0
+DEBUG 2017-09-06 14:20:54,181 Abp.Modules.AbpModuleManager                                 - Found 11 ABP modules in total.  :行号0
+DEBUG 2017-09-06 14:20:54,186 Abp.Modules.AbpModuleManager                                 - Loaded module: InfoEarthFrame.Web.InfoEarthFrameWebModule, InfoEarthFrame.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null  :行号0
+DEBUG 2017-09-06 14:20:54,188 Abp.Modules.AbpModuleManager                                 - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null  :行号0
+DEBUG 2017-09-06 14:20:54,188 Abp.Modules.AbpModuleManager                                 - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null  :行号0
+DEBUG 2017-09-06 14:20:54,189 Abp.Modules.AbpModuleManager                                 - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null  :行号0
+DEBUG 2017-09-06 14:20:54,189 Abp.Modules.AbpModuleManager                                 - Loaded module: Abp.AbpKernelModule, Abp, Version=0.10.0.1, Culture=neutral, PublicKeyToken=null  :行号0
+DEBUG 2017-09-06 14:20:54,189 Abp.Modules.AbpModuleManager                                 - Loaded module: InfoEarthFrame.InfoEarthFrameDataModule, InfoEarthFrame.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null  :行号0
+DEBUG 2017-09-06 14:20:54,190 Abp.Modules.AbpModuleManager                                 - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.10.0.2, Culture=neutral, PublicKeyToken=null  :行号0
+DEBUG 2017-09-06 14:20:54,190 Abp.Modules.AbpModuleManager                                 - Loaded module: InfoEarthFrame.InfoEarthFrameCoreModule, InfoEarthFrame.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null  :行号0
+DEBUG 2017-09-06 14:20:54,190 Abp.Modules.AbpModuleManager                                 - Loaded module: InfoEarthFrame.InfoEarthFrameApplicationModule, InfoEarthFrame.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null  :行号0
+DEBUG 2017-09-06 14:20:54,190 Abp.Modules.AbpModuleManager                                 - Loaded module: InfoEarthFrame.InfoEarthFrameWebApiModule, InfoEarthFrame.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null  :行号0
+DEBUG 2017-09-06 14:20:54,190 Abp.Modules.AbpModuleManager                                 - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null  :行号0
+DEBUG 2017-09-06 14:20:54,193 Abp.Modules.AbpModuleManager                                 - 11 modules loaded.  :行号0
+DEBUG 2017-09-06 14:20:54,469 Abp.EntityFramework.AbpEntityFrameworkModule                 - Registering DbContext: InfoEarthFrame.EntityFramework.InfoEarthFrameDbContext, InfoEarthFrame.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null  :行号0
+DEBUG 2017-09-06 14:20:56,295 Abp.Localization.LocalizationManager                         - Initializing 3 localization sources.  :行号0
+DEBUG 2017-09-06 14:20:56,304 Abp.Localization.LocalizationManager                         - Initialized localization source: Abp  :行号0
+DEBUG 2017-09-06 14:20:56,306 Abp.Localization.LocalizationManager                         - Initialized localization source: AbpWeb  :行号0
+DEBUG 2017-09-06 14:20:56,309 Abp.Localization.LocalizationManager                         - Initialized localization source: InfoEarthFrame  :行号0
+DEBUG 2017-09-06 14:20:56,482 Abp.BackgroundJobs.BackgroundJobManager                      - Start background worker: Abp.BackgroundJobs.BackgroundJobManager  :行号0
+DEBUG 2017-09-06 14:20:56,508 Abp.Logging.LogHelper                                        - Dynamic web api controller is created for type 'InfoEarthFrame.Module.IModuleAppService' with service name 'app/V1/module'.  :行号0
+DEBUG 2017-09-06 14:20:56,510 Abp.Logging.LogHelper                                        - Dynamic web api controller is created for type 'InfoEarthFrame.Module.IModuleButtonAppService' with service name 'app/V1/moduleButton'.  :行号0
+DEBUG 2017-09-06 14:20:56,511 Abp.Logging.LogHelper                                        - Dynamic web api controller is created for type 'InfoEarthFrame.Module.IModuleColumnAppService' with service name 'app/V1/moduleColumn'.  :行号0
+WARN  2017-09-06 14:21:06,015 Abp.Logging.LogHelper                                        - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.  :行号0
+WARN  2017-09-06 14:21:06,050 Abp.Logging.LogHelper                                        - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.  :行号0

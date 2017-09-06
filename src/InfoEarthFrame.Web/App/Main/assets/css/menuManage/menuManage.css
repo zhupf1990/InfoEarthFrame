@@ -1,0 +1,273 @@
+﻿.h100 {
+    height: 100%;
+}
+
+.menuTree {
+    width: 210px;
+    border: 1px solid #ededed;
+    padding: 0 4px;
+    float: left;
+    background-color: #fff;
+}
+
+.panel-Title {
+    border-color: #e5e5e5;
+    color: #666;
+    height: 48px;
+    line-height: 48px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid #ededed;
+    padding-left: 9px;
+    margin-bottom: 12px;
+    font-size:16px;
+    font-weight:600;
+}
+
+.opMenuCon {
+    min-height: 200px;
+    margin-left: 220px;
+    border: 1px solid #ededed;
+    padding: 0 4px;
+    background-color: #fff;
+}
+
+.titlePanel {
+    line-height: 60px;
+    height: 60px;
+    position: relative;
+}
+
+    .titlePanel .title-search {
+        float: left;
+        padding-left: 15px;
+    }
+
+        .titlePanel .title-search .btn {
+            margin-bottom: 3px;
+            height: 28px;
+            padding-top: 5px;
+            font-size: 9pt;
+        }
+
+.form-control {
+    color: #000;
+    border-radius: 0px;
+    box-shadow: none;
+    font-size: 9pt;
+    height: 28px;
+    padding-top: 0px;
+    padding-bottom: 1px;
+    padding-right: 0px;
+    padding-left: 5px;
+    resize: none;
+}
+
+.titlePanel .title-search .form-control {
+    border-radius: 4px !important;
+    box-shadow: none;
+}
+
+.titlePanel .toolbar {
+    float: right;
+    padding-right: 15px;
+    line-height: 56px;
+}
+
+.gridPanelTop {
+    width: auto;
+    padding-right: 17px;
+}
+
+.dropdown-menu {
+    margin-top: -2px;
+    display: block;
+}
+
+.ui-select-width {
+    width: 200px;
+}
+
+.ui-select-height {
+    height: 100px;
+}
+/*
+**testwinCls必须在属性win-class中自定义
+**modal-lg , modal-sm , modal-dialog 和 modal-content 是固定的class,不可更改。
+*/
+.testwinCls .modal-lg {
+    width: 700px; /*设置弹出框宽*/
+}
+
+.testwinCls .modal-content {
+    height: 320px; /*设置弹出框高*/
+}
+
+    .testwinCls .modal-content .modal-body {
+        height: 300px;
+        overflow: auto;
+        font-size: 12px;
+    }
+
+.testwinCls .modal-dialog {
+    top: 26%; /*设置弹出位置距顶端*/
+}
+
+.form {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border-collapse: collapse;
+    border-width: 3px 1px 1px;
+    table-layout: fixed;
+    color: #000;
+}
+
+    .form .formTitle {
+        position: relative;
+        left: 0px;
+        text-align: right;
+        white-space: nowrap;
+        font-weight: normal;
+        width: 90px;
+        padding-right: 10px;
+    }
+
+        .form .formTitle font {
+            color: red;
+            position: absolute;
+            right: 0px;
+        }
+
+    .form .formValue {
+        position: relative;
+        padding: 5px;
+        width: auto;
+    }
+
+.ui-select {
+    cursor: pointer;
+    outline: 0;
+    width: auto;
+    height: 28px;
+    line-height: 26px;
+    position: relative;
+    background: #fff url(../../images/a2.png) no-repeat right center;
+    border: 1px solid rgba(200, 199, 204, 0.62);
+}
+
+    .ui-select .ui-select-text {
+        box-shadow: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
+        border: 1px solid #ccc;
+        padding-left: 5px;
+        height: 28px;
+        line-height: 26px;
+    }
+
+.form .input-button {
+    border: none;
+    right: 8px;
+    top: 50%;
+    width: 12px;
+    height: 16px;
+    margin-top: -12px;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    z-index: 100;
+}
+
+#iconList .col-md-6 {
+    cursor: pointer;
+}
+
+.iconActive,#iconList .col-md-6:hover {
+        background-color: #1FBBA6;
+        color: #fff;
+    }
+
+#lr-delete {
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+}
+
+.iconwinCls .modal-content {
+    height: 600px; /*设置弹出框高*/
+}
+
+.iconwinCls .modal-content .modal-body {
+    height: 500px;
+    overflow: auto;
+    font-size: 12px;
+    padding-bottom:60px;
+}
+.iconwinCls .form-group{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    margin-top:0 !important;
+    display:block;
+}
+.menuTree_xiala {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    max-height:170px;
+    overflow:auto;
+    /*display: none;*/
+    position: absolute;
+    left: 0px;
+    top: 28px;
+    background-color: #fff;
+    border: 1px solid #ededed;
+    border-top: 0;
+    z-index: 9999;
+}
+.gridPanel {
+    float:left;
+}
+.gridPanel td {
+    padding:0 !important;
+}
+.gridPanel span {
+    padding:5px 4px;
+    display:block;
+    width:100%;
+    height:100%;
+}
+.typePullDownTreeData .trees-combobody {
+    position: absolute;
+    z-index: 999;
+    background: #fff;
+    border: 1px solid #ccc;
+    top: 33px;
+    left: -1px;
+    width:219px;
+    max-height:154px;
+    overflow:auto;
+}
+
+.trees-combos-select {
+    border-top: 1px solid rgba(200, 199, 204, 0.62) !important;
+    border-left: 1px solid rgba(200, 199, 204, 0.62) !important;
+    border-right: 1px solid rgba(200, 199, 204, 0.62) !important;
+    position: relative;
+}
+.trees-combos-select .trees-combospan {
+    height:28px !important;
+    padding-left:4px;
+    font-size: 14px;
+    color: #5b5b60;
+}
+.trees-combos-select > .trees-combospan::after {
+    top:0px !important;
+}
+.trees-combos-select.trees-combos-act .trees-combospan::after{
+    top:14px !important;
+}

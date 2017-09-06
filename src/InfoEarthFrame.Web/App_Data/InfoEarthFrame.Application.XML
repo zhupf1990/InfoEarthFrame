@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InfoEarthFrame.Application</name>
+    </assembly>
+    <members>
+        <member name="T:InfoEarthFrame.InfoEarthFrameAppServiceBase">
+            <summary>
+            Derive your application services from this class.
+            </summary>
+        </member>
+        <member name="T:InfoEarthFrame.Module.IModuleAppService">
+            <summary>
+            菜单模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleAppService.GetSortCode">
+            <summary>
+            获取最大编号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleAppService.GetList">
+            <summary>
+            功能列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleAppService.GetEntity(System.String)">
+            <summary>
+            功能实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleAppService.ExistEnCode(System.String,System.String)">
+            <summary>
+            功能编号不能重复
+            </summary>
+            <param name="enCode">编号</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleAppService.ExistFullName(System.String,System.String)">
+            <summary>
+            功能名称不能重复
+            </summary>
+            <param name="fullName">名称</param>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleAppService.RemoveForm(System.String)">
+            <summary>
+            删除功能
+            </summary>
+            <param name="keyValue">主键</param>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleAppService.SaveForm(InfoEarthFrame.Module.Dtos.ModuleInfoDTO)">
+            <summary>
+            保存表单（新增、修改）
+            </summary>
+            <param name="moduleEntity">功能实体</param>
+            <returns></returns>
+        </member>
+        <member name="T:InfoEarthFrame.Module.IModuleButtonAppService">
+            <summary>
+            菜单模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleButtonAppService.GetList">
+            <summary>
+            按钮列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleButtonAppService.GetList(System.String)">
+            <summary>
+            按钮列表
+            </summary>
+            <param name="moduleId">功能Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleButtonAppService.GetEntity(System.String)">
+            <summary>
+            按钮实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleButtonAppService.AddEntity(InfoEarthFrame.Module.Dtos.ModuleButtonDTO)">
+            <summary>
+            添加按钮
+            </summary>
+            <param name="moduleButtonEntity">按钮实体</param>
+        </member>
+        <member name="T:InfoEarthFrame.Module.IModuleColumnAppService">
+            <summary>
+            菜单模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleColumnAppService.GetList">
+            <summary>
+            视图列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleColumnAppService.GetList(System.String)">
+            <summary>
+            视图列表
+            </summary>
+            <param name="moduleId">功能Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleColumnAppService.GetEntity(System.String)">
+            <summary>
+            视图实体
+            </summary>
+            <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleColumnAppService.AddEntity(InfoEarthFrame.Module.Dtos.ModuleColumnDTO)">
+            <summary>
+            添加视图
+            </summary>
+            <param name="moduleColumnEntity">视图实体</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

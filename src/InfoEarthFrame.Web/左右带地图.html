@@ -1,0 +1,39 @@
+﻿<!-- /// controller:  'xxx' -  localtion: App/Main/assets/js/controllers/xxx.js /// -->
+<div class="container-fluid container-fullw container-full-stretch" ng-controller="xxx">
+    <div class="row">
+
+        <!-- 左 -->
+        <div class="col-sm-3 col-md-3 col-lg-2 container-col-stretch">
+            <div class="panel panel-white panel-bottom0">
+                <div class="panel-heading border-bottom">
+                    <h4 class="panel-title">标题</h4>
+                </div>
+                <div class="panel-body panel-fixed self_bottom">
+                    <!-- 内容 -->
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 右 -->
+        <div class="col-sm-9 col-md-9 col-lg-10 container_padding">
+            <!-- 上 -->
+            <div class="panel panel-white">
+                <open-map dataset="dataset" get-extent="getExtent" measuremap="measuremap"></open-map>
+            </div>
+
+            <!-- 下 -->
+            <div class="panel panel-white panel-fold panel-bottom0">
+                <panel-header panel-title="标题" add-click="addClick" del-click="delClick" fold-element="globalobj"></panel-header>
+                <div class="panel-body">
+                    <!-- 内容 -->
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
