@@ -4,10 +4,836 @@
         <name>InfoEarthFrame.Application</name>
     </assembly>
     <members>
+        <member name="T:InfoEarthFrame.Application.IAreaAppService">
+            <summary>
+            行政区划模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IAreaAppService.GetProvinces(InfoEarthFrame.Application.ProvincesQuery)">
+            <summary>
+            获取省
+            </summary>
+            <param name="query">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IAreaAppService.GetCity(InfoEarthFrame.Application.CityQuery)">
+            <summary>
+            获取市
+            </summary>
+            <param name="query">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IAreaAppService.GetCounty(InfoEarthFrame.Application.CountyQuery)">
+            <summary>
+            获取区县
+            </summary>
+            <param name="query">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IAreaAppService.GetTowns(InfoEarthFrame.Application.TownsQuery)">
+            <summary>
+            获取乡镇
+            </summary>
+            <param name="query">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.AreaAppService.GetProvinces(InfoEarthFrame.Application.ProvincesQuery)">
+            <summary>
+            获取省
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.AreaAppService.GetCity(InfoEarthFrame.Application.CityQuery)">
+            <summary>
+            获取市数据
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.AreaAppService.GetCounty(InfoEarthFrame.Application.CountyQuery)">
+            <summary>
+            获取县数据
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.AreaAppService.GetTowns(InfoEarthFrame.Application.TownsQuery)">
+            <summary>
+            获取镇数据
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AreaOutput.Label">
+            <summary>
+            树形显示的参数
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AreaOutput.Children">
+            <summary>
+            树形显示的参数叶子节点
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.TownOutput.Label">
+            <summary>
+            树形显示的参数
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.TownOutput.Children">
+            <summary>
+            树形显示的参数叶子节点
+            </summary>
+        </member>
+        <member name="T:InfoEarthFrame.Application.AttachmentAppService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:InfoEarthFrame.Application.IAttachmentAppService">
+            <summary>
+            多媒体模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Application.AttachmentAppService.#ctor(InfoEarthFrame.Core.IAttachmentRepository)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Application.AttachmentAppService.GetAllList(System.String)">
+            <summary>
+            通过外键获取附件列表
+            </summary>
+            <param name="fkid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.AttachmentAppService.InsertMultimedia(InfoEarthFrame.Application.MultimediaAttachmentInput)">
+            <summary>
+            多媒体插入一条记录
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.AttachmentAppService.Insert(InfoEarthFrame.Application.AttachmentInput)">
+            <summary>
+            异步插入一个
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.AttachmentAppService.Insert(System.Collections.Generic.List{InfoEarthFrame.Application.AttachmentInput})">
+            <summary>
+            异步插入多个
+            </summary>
+            <param name="inputList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.AttachmentAppService.Delete(System.String)">
+            <summary>
+            根据ID主键删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.AttachmentAppService.DeleteAllByFKId(System.String)">
+            <summary>
+            根据外键删除
+            </summary>
+            <param name="FKId"></param>
+            <returns></returns>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentDto.Id">
+            <summary>
+            Guid
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentDto.FKey">
+            <summary>
+            外键
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentDto.PhysicalName">
+            <summary>
+            物理名
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentDto.LogicName">
+            <summary>
+            逻辑名
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentDto.PhysicalPath">
+            <summary>
+            物理路径
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentDto.HttpPath">
+            <summary>
+            网络路径
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentDto.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentDto.Extension">
+            <summary>
+            扩展名
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentDto.Sn">
+            <summary>
+            排序号
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentDto.iState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentDto.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentDto.CreateName">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentInput.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentInput.FKey">
+            <summary>
+            外键
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentInput.PhysicalName">
+            <summary>
+            物理名
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentInput.LogicName">
+            <summary>
+            逻辑名
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentInput.PhysicalPath">
+            <summary>
+            物理路径
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentInput.HttpPath">
+            <summary>
+            网络路径
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentInput.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentInput.Extension">
+            <summary>
+            扩展名
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentInput.Sn">
+            <summary>
+            排序号
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentInput.iState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentInput.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.AttachmentInput.CreateName">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.FKey">
+            <summary>
+            外键
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.PhysicalName">
+            <summary>
+            物理名
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.LogicName">
+            <summary>
+            逻辑名
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.PhysicalPath">
+            <summary>
+            物理路径
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.HttpPath">
+            <summary>
+            网络路径
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.Extension">
+            <summary>
+            扩展名
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.Sn">
+            <summary>
+            排序号
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.iState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.CreateName">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaAttachmentInput.TypeCode">
+            <summary>
+            多媒体附件类别ID
+            </summary>
+        </member>
+        <member name="T:InfoEarthFrame.Application.IDisasterService">
+            <summary>
+            地灾模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IDisasterService.GetAllList">
+            <summary>
+            获取所有
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IDisasterService.GetPageList(InfoEarthFrame.Application.QueryDisasterInput)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="queryDto">查询信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IDisasterService.GetPageAndCountList(InfoEarthFrame.Application.QueryDisasterInput)">
+            <summary>
+            分页查询(获取总条数)
+            </summary>
+            <param name="queryDto">查询信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IDisasterService.GetCount(InfoEarthFrame.Application.QueryDisasterInput)">
+            <summary>
+            获取总条数
+            </summary>
+            <param name="queryDto">查询信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IDisasterService.GetDetailById(System.Int32)">
+            <summary>
+            根据ID查询详细信息
+            </summary>
+            <param name="Id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IDisasterService.Insert(InfoEarthFrame.Application.DisasterInput)">
+            <summary>
+            新增
+            </summary>
+            <param name="input">信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IDisasterService.Update(InfoEarthFrame.Application.DisasterInput)">
+            <summary>
+            更新
+            </summary>
+            <param name="input">信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IDisasterService.DeleteById(System.Int32)">
+            <summary>
+            根据主键删除
+            </summary>
+            <param name="Id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.DisasterService.#ctor(InfoEarthFrame.Core.IDisasterRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="idDisasterRepository"></param>
+        </member>
+        <member name="M:InfoEarthFrame.Application.DisasterService.GetAllList">
+            <summary>
+            获取所有数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.DisasterService.GetPageList(InfoEarthFrame.Application.QueryDisasterInput)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="queryDisasterDato"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.DisasterService.GetPageAndCountList(InfoEarthFrame.Application.QueryDisasterInput)">
+            <summary>
+            分页并返回数据总条数
+            </summary>
+            <param name="queryDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.DisasterService.GetCount(InfoEarthFrame.Application.QueryDisasterInput)">
+            <summary>
+            获取符合的数据条数
+            </summary>
+            <param name="queryDisasterDato"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.DisasterService.GetDetailById(System.Int32)">
+            <summary>
+            根据ID获取数据
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.DisasterService.Insert(InfoEarthFrame.Application.DisasterInput)">
+            <summary>
+            新增数据
+            </summary>
+            <param name="disasterDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.DisasterService.Update(InfoEarthFrame.Application.DisasterInput)">
+            <summary>
+            修改数据
+            </summary>
+            <param name="disasterDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.DisasterService.DeleteById(System.Int32)">
+            <summary>
+            根据ID删除
+            </summary>
+            <param name="Id"></param>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterDto.DISASTERNAME">
+            <summary>
+            灾害点名称
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterDto.OCCURTIME">
+            <summary>
+            发生时间
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterDto.POSITION">
+            <summary>
+            具体位置
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterDto.REMARK">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterDto.AREARIGHTCODE">
+            <summary>
+            所属区域
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterInput.DISASTERNAME">
+            <summary>
+            灾害点名称
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterInput.OCCURTIME">
+            <summary>
+            发生时间
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterInput.POSITION">
+            <summary>
+            具体位置
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterInput.REMARK">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterInput.AREARIGHTCODE">
+            <summary>
+            所属区域
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterOutput.DISASTERNAME">
+            <summary>
+            灾害点名称
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterOutput.OCCURTIME">
+            <summary>
+            发生时间
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterOutput.POSITION">
+            <summary>
+            具体位置
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterOutput.REMARK">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.DisasterOutput.AREARIGHTCODE">
+            <summary>
+            所属区域
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.HazardsTypeDto.HAZARDSTYPE">
+            <summary>
+            灾害体类型
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.HazardsTypeDto.TABNAME">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.HazardsTypeDto.CGHID">
+            <summary>
+            CGHmdb系统灾害体类型ID
+            </summary>
+            
+        </member>
+        <member name="T:InfoEarthFrame.Application.IHazardsTypeAppService">
+            <summary>
+            地灾模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IHazardsTypeAppService.GetAllList">
+            <summary>
+            获取所有地灾类型
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:InfoEarthFrame.InfoEarthFrameAppServiceBase">
             <summary>
             Derive your application services from this class.
             </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.KneeCoordinateInput.CoordSys">
+            <summary>
+            坐标系标准
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.KneeCoordinateInput.IsProjectiveGeo">
+            <summary>
+            是否为投影坐标
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.KneeCoordinateInput.InitialData">
+            <summary>
+            坐标列表
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.KneeCoordinateOutput.status">
+            <summary>
+            状态（true:成功，false:失败）
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.KneeCoordinateOutput.msg">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.KneeCoordinateOutput.data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:InfoEarthFrame.Application.IKneeCoordinateAppService">
+            <summary>
+            拐点坐标模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IKneeCoordinateAppService.GeoCoordinateList(InfoEarthFrame.Application.KneeCoordinateInput)">
+            <summary>
+            转化拐点坐标
+            </summary>
+            <param name="input">输入信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.KneeCoordinateAppService.GeoCoordinateList(InfoEarthFrame.Application.KneeCoordinateInput)">
+            <summary>
+            通过转换获得地理坐标列表（经、纬度）
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.KneeCoordinateAppService.SwicthBeijing(System.Int32)">
+            <summary>
+            北京54坐标系
+            注意：3度分带:y坐标前两位数为 25—45 之间  6度分带:y坐标前两位数为 13—23 之间  
+            </summary>
+            <param name="num"></param>
+        </member>
+        <member name="M:InfoEarthFrame.Application.KneeCoordinateAppService.SwicthXian(System.Int32)">
+            <summary>
+            西安80坐标系
+            注意：3度分带:y坐标前两位数为 25—45 之间  6度分带:y坐标前两位数为 13—23 之间  
+            </summary>
+            <param name="num"></param>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerDto.PID">
+            <summary>
+            父ID
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerDto.LABEL">
+            <summary>
+            标题文本
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerDto.ZOOMLEVEL">
+            <summary>
+            放大总级数
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerDto.URL">
+            <summary>
+            图层url
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerDto.DATASERVERKEY">
+            <summary>
+            数据服务Key值
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerDto.TILESIZE">
+            <summary>
+            切片大小
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerDto.ZEROLEVELSIZE">
+            <summary>
+            零级大小
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerDto.PICTYPE">
+            <summary>
+            图片类型
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerInput.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerInput.PID">
+            <summary>
+            父ID
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerInput.LABEL">
+            <summary>
+            标题文本
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerInput.ZOOMLEVEL">
+            <summary>
+            放大总级数
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerInput.URL">
+            <summary>
+            图层url
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerInput.DATASERVERKEY">
+            <summary>
+            数据服务Key值
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerInput.TILESIZE">
+            <summary>
+            切片大小
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerInput.ZEROLEVELSIZE">
+            <summary>
+            零级大小
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerInput.PICTYPE">
+            <summary>
+            图片类型
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerOutput.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerOutput.PID">
+            <summary>
+            父ID
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerOutput.LABEL">
+            <summary>
+            标题文本
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerOutput.ZOOMLEVEL">
+            <summary>
+            放大总级数
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerOutput.URL">
+            <summary>
+            图层url
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerOutput.DATASERVERKEY">
+            <summary>
+            数据服务Key值
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerOutput.TILESIZE">
+            <summary>
+            切片大小
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerOutput.ZEROLEVELSIZE">
+            <summary>
+            零级大小
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.LayerManagerOutput.PICTYPE">
+            <summary>
+            图片类型
+            </summary>
+        </member>
+        <member name="T:InfoEarthFrame.Application.ILayerManagerAppService">
+            <summary>
+            地图模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Application.ILayerManagerAppService.GetAllList">
+            <summary>
+            获取所有图层
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.LayerManagerAppService.#ctor(InfoEarthFrame.Core.ILayerManagerRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="iLayerManagerRepository"></param>
+        </member>
+        <member name="M:InfoEarthFrame.Application.LayerManagerAppService.CreatTree(System.Collections.Generic.List{InfoEarthFrame.Application.LayerManagerDto},System.String)">
+            <summary>
+            创建树
+            </summary>
+            <param name="list"></param>
+            <param name="pid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.LayerManagerAppService.GetAllList">
+            <summary>
+            获取所有
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.LayerManagerAppService.GetPageList(InfoEarthFrame.Application.QueryLayerManagerInput)">
+            <summary>
+            获取不带count的分页列表
+            </summary>
+            <param name="PageIndex"></param>
+            <param name="PageSize"></param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.LayerManagerAppService.GetPageListAndCount(InfoEarthFrame.Application.QueryLayerManagerInput)">
+            <summary>
+            获取带count的分页列表
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.LayerManagerAppService.GetPageCount(InfoEarthFrame.Application.QueryLayerManagerInput)">
+            <summary>
+            获取符合的数据条数
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.LayerManagerAppService.Intsert(System.Int32,System.Int32,InfoEarthFrame.Application.LayerManagerInput)">
+            <summary>
+            添加
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.LayerManagerAppService.Update(System.Int32,System.Int32,InfoEarthFrame.Application.LayerManagerDto)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.LayerManagerAppService.Delete(System.String,System.Int32,System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <param name="PageSize"></param>
+            <returns>PageData</returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.LayerManagerAppService.GetLayerManagerByPID">
+            <summary>
+            绑定下拉框 根据父ID查询
+            </summary>
+            <param name="pid"></param>
+            <returns></returns>
         </member>
         <member name="T:InfoEarthFrame.Module.IModuleAppService">
             <summary>
@@ -31,6 +857,13 @@
             功能实体
             </summary>
             <param name="keyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.IModuleAppService.GetEntityByModuleCode(System.String)">
+            <summary>
+            根据模块编号查询菜单
+            </summary>
+            <param name="moduleCode">模块编号</param>
             <returns></returns>
         </member>
         <member name="M:InfoEarthFrame.Module.IModuleAppService.ExistEnCode(System.String,System.String)">
@@ -124,6 +957,240 @@
             </summary>
             <param name="moduleColumnEntity">视图实体</param>
             <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Module.ModuleAppService.GetEntityByModuleCode(System.String)">
+            <summary>
+            根据模块编号查询菜单
+            </summary>
+            <param name="moduleCode">模块编号</param>
+            <returns></returns>
+        </member>
+        <member name="P:InfoEarthFrame.Application.ModuleInfoInput.FKey">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.ModuleInfoInput.ModuleType">
+            <summary>
+            业务模块的类别
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaOutput.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaOutput.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaOutput.ModuleType">
+            <summary>
+            业务模块的类别
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaOutput.Children">
+            <summary>
+            多媒体的数据
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaTypeDto.Id">
+            <summary>
+            Guid
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaTypeDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaTypeDto.ModuleType">
+            <summary>
+            业务模块的类别
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaTypeInput.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaTypeInput.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.MultimediaTypeInput.ModuleType">
+            <summary>
+            业务模块的类别
+            </summary>
+        </member>
+        <member name="T:InfoEarthFrame.Application.IMultimediaAppService">
+            <summary>
+            多媒体模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IMultimediaAppService.GetAllList(InfoEarthFrame.Application.ModuleInfoInput)">
+            <summary>
+            获取多媒体信息
+            </summary>
+            <param name="input">多媒体信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IMultimediaAppService.Insert(InfoEarthFrame.Application.MultimediaTypeInput)">
+            <summary>
+            新增多媒体
+            </summary>
+            <param name="input">多媒体信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IMultimediaAppService.Update(InfoEarthFrame.Application.MultimediaTypeInput)">
+            <summary>
+            更新多媒体信息
+            </summary>
+            <param name="input">多媒体信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.IMultimediaAppService.Delete(System.String)">
+            <summary>
+            删除多媒体信息
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.MultimediaAppService.#ctor(InfoEarthFrame.Core.IMultimediaTypeRepository,InfoEarthFrame.Core.IAttachmentRepository)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Application.MultimediaAppService.GetAllList(InfoEarthFrame.Application.ModuleInfoInput)">
+            <summary>
+            通过外键获取附件列表
+            </summary>
+            <param name="fkid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.MultimediaAppService.Insert(InfoEarthFrame.Application.MultimediaTypeInput)">
+            <summary>
+            插入
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.MultimediaAppService.Delete(System.String)">
+            <summary>
+            根据ID主键删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InfoEarthFrame.Application.ISlopeAppService">
+            <summary>
+            地灾模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Application.SlopeAppService.GetPageList(InfoEarthFrame.Application.QuerySlopeInput)">
+            <summary>
+            按条件分页查询
+            </summary>
+            <param name="querySlopeInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.SlopeAppService.GetFieldsPageList(InfoEarthFrame.Application.QuerySlopeInput)">
+            <summary>
+            按条件分页查询指定字段，并返回总数
+            </summary>
+            <param name="querySlopeInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.SlopeAppService.GetPageAndCountList(InfoEarthFrame.Application.QuerySlopeInput)">
+            <summary>
+            分页条件查询，并返回总数
+            </summary>
+            <param name="querySlopeInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.SlopeAppService.GetCount(InfoEarthFrame.Application.QuerySlopeInput)">
+            <summary>
+            条件查询获取pageCount
+            </summary>
+            <param name="querySlopeInput"></param>
+            <returns>pageCount</returns>
+            
+        </member>
+        <member name="M:InfoEarthFrame.Application.SlopeAppService.Insert(InfoEarthFrame.Application.SlopeInput)">
+            <summary>
+            添加
+            </summary>
+            <param name="slopeInput"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:InfoEarthFrame.Application.SlopeAppService.DeleteById(System.String)">
+            <summary>
+            根据Id删除
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InfoEarthFrame.Application.SlopeAppService.Update(InfoEarthFrame.Application.SlopeInput)">
+            <summary>
+            修改
+            </summary>
+            <param name="slopeInput"></param>
+            <returns></returns>
+        </member>
+        <member name="P:InfoEarthFrame.Application.TreeListDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.TreeListDto.ParentID">
+            <summary>
+            PID
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.TreeListDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.TreeListDto.Sn">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="T:InfoEarthFrame.Application.ITreeAppService">
+            <summary>
+            树结构模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Application.TreeAppService.#ctor">
+            <summary>
+            构造函数
+            </summary>
+            <param name="iLayerManagerRepository"></param>
+        </member>
+        <member name="P:InfoEarthFrame.Application.UploadDTO.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:InfoEarthFrame.Application.UploadDTO.Path">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="T:InfoEarthFrame.Application.IUploadFileAppService">
+            <summary>
+            文件上传模块
+            </summary>
+        </member>
+        <member name="M:InfoEarthFrame.Application.UploadFileAppService.#ctor">
+            <summary>
+            构造函数
+            </summary>
+            <param name="iLayerManagerRepository"></param>
         </member>
     </members>
 </doc>

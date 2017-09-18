@@ -35,6 +35,14 @@ namespace InfoEarthFrame.Module
         /// <returns></returns>
         [HttpGet]
         ModuleDTO GetEntity(string keyValue);
+
+        /// <summary>
+        /// 根据模块编号查询菜单
+        /// </summary>
+        /// <param name="moduleCode">模块编号</param>
+        /// <returns></returns>
+        [HttpGet]
+        ModuleDTO GetEntityByModuleCode(string moduleCode);
         #endregion
 
         #region 验证数据

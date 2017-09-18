@@ -14,20 +14,24 @@ using InfoEarthFrame.Module;
 
 namespace InfoEarthFrame.Web.Controllers
 {
-     [SSOHandlerLogin]
+    [SSOHandlerLogin]
     public class HomeController : InfoEarthFrameControllerBase
     {
 
-        //private IModuleButtonAppService _appService;
+        private IModuleAppService _appService;
+        private string SSOUrl = System.Configuration.ConfigurationManager.AppSettings["SSOUrl"];
 
+        private SSOWebApiWS _ssoWS = null;
 
-        //public HomeController(IModuleButtonAppService appService)
-        //{
-        //    _appService = appService;
-        //}
+        public HomeController(IModuleAppService appService)
+        {
+            _appService = appService;
+            _ssoWS = new SSOWebApiWS(SSOUrl);
+        }
 
         public ActionResult Index()
         {
+            _appService.GetSortCode();
             //_appService.GetList();
             //string userPhone = "System";
             //string passWord = "0000";
@@ -54,10 +58,23 @@ namespace InfoEarthFrame.Web.Controllers
         public ActionResult Logout()
         {
             //HttpContext.GetOwinContext().Authentication.SignOut();
-            string url = ConfigurationManager.AppSettings["SSOUrl"];
-            SSOWebApiWS ws = new SSOWebApiWS(url);
+
+            Session.Abandon();                                          //清除当前会话
+            Session.Clear();                                            //清除当前浏览器所有Session
+            WebHelper.RemoveCookie("Token");                           //清除Token
+
+
+            string ssoUrl = System.Configuration.ConfigurationManager.AppSettings["SSOUrl"];
+            SSOWebApiWS ws = new SSOWebApiWS(ssoUrl);
             ws.ClearTicket();
-            return View("");
+
+            string webUrl = System.Configuration.ConfigurationManager.AppSettings["WebUrl"];
+            var jsonData = new
+            {
+                ssoUrl = ssoUrl + "Login/SSOClear?BackURL=" + webUrl,
+                Msg = "退出系统"
+            };
+            return Content(jsonData.ToJson());
         }
 
         /// <summary>
@@ -89,35 +106,56 @@ namespace InfoEarthFrame.Web.Controllers
 
         }
 
-         [HttpGet]
+        [HttpGet]
         public void ExcelTest()
         {
-             DataTable objTable = new DataTable("测试");
-             objTable.Columns.Add("测试1", typeof(string));
-             objTable.Columns.Add("测试2 ", typeof(string));
-             objTable.Columns.Add("测试3", typeof(string));
+            DataTable objTable = new DataTable("测试");
+            objTable.Columns.Add("测试1", typeof(string));
+            objTable.Columns.Add("测试2 ", typeof(string));
+            objTable.Columns.Add("测试3", typeof(string));
 
-             System.Data.DataRow dr = objTable.NewRow();
-             dr[0] = "1122";
-             dr[1] = "3214";
-             dr[2] = "5455";
-             System.Data.DataRow dr1 = objTable.NewRow();
-             dr1[0] = "1122";
-             dr1[1] = "3214";
-             dr1[2] = "5455";
-             System.Data.DataRow dr2 = objTable.NewRow();
-             dr2[0] = "1122";
-             dr2[1] = "3214";
-             dr2[2] = "5455";
-             System.Data.DataRow dr4 = objTable.NewRow();
-             dr4[0] = "1122";
-             dr4[1] = "3214";
-             dr4[2] = "5455";
-             objTable.Rows.Add(dr);
-             objTable.Rows.Add(dr1);
-             objTable.Rows.Add(dr2);
-             objTable.Rows.Add(dr4);
-             ExcelHelper.ExcelDownloadOnlyDT(objTable, "测试", "测试.xls");
+            System.Data.DataRow dr = objTable.NewRow();
+            dr[0] = "1122";
+            dr[1] = "3214";
+            dr[2] = "5455";
+            System.Data.DataRow dr1 = objTable.NewRow();
+            dr1[0] = "1122";
+            dr1[1] = "3214";
+            dr1[2] = "5455";
+            System.Data.DataRow dr2 = objTable.NewRow();
+            dr2[0] = "1122";
+            dr2[1] = "3214";
+            dr2[2] = "5455";
+            System.Data.DataRow dr4 = objTable.NewRow();
+            dr4[0] = "1122";
+            dr4[1] = "3214";
+            dr4[2] = "5455";
+            objTable.Rows.Add(dr);
+            objTable.Rows.Add(dr1);
+            objTable.Rows.Add(dr2);
+            objTable.Rows.Add(dr4);
+            ExcelHelper.ExcelDownloadOnlyDT(objTable, "测试", "测试.xls");
+        }
+
+        [HttpGet]
+        public ActionResult GetWebPath()
+        {
+            string webBusinessUrl = System.Configuration.ConfigurationManager.AppSettings["WebBusinessUrl"];
+            string ssoUrl = System.Configuration.ConfigurationManager.AppSettings["SSOUrl"];
+            string webUrl = System.Configuration.ConfigurationManager.AppSettings["WebUrl"];
+            var JsonData = new
+            {
+                webUrl = webUrl.TrimEnd('/'),
+                webBusinessUrl = webBusinessUrl.TrimEnd('/'),
+                ssoUrl = ssoUrl.TrimEnd('/'),
+            };
+            return Content(JsonData.ToJson());
+        }
+
+        public ActionResult GetAreaInfo(string parentId)
+        {
+            string result = _ssoWS.GetAreaListJson(parentId);
+            return Content(result);
         }
     }
 }

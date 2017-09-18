@@ -30,7 +30,11 @@ app.constant('JS_REQUIRES', {
         'ckeditor-plugin': '../App/bower_components/ckeditor/ckeditor.js',
         'jquery-nestable-plugin': ['../App/bower_components/jquery-nestable/jquery.nestable.js'],
         'touchspin-plugin': ['../App/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js', '../App/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css'],
-
+        ////*** 引用webuploader的js和css
+        //'webuploader': ['../Scripts/webuploader-0.1.5/webuploader.js', '../Scripts/webuploader-0.1.5/webuploader.css'],
+        //'micFilereaderUpload': '/App/Main/assets/js/directives/uploadBreakpointDirective.js',
+        //'uploadCtrl': '/App/Main/assets/js/controllers/uploadCtrl.js',
+        //'bpUploadHtml': '/App/Main/assets/js/directives/bpUploadHtml5Directive.js',
         //富文本编辑器
         'wang-editor': ['../App/bower_components/wangEditor/js/wangEditor.js', '../App/bower_components/wangEditor/js/highlight.min.js', '../App/bower_components/wangEditor/css/wangEditor.min.css'],
 
@@ -44,6 +48,9 @@ app.constant('JS_REQUIRES', {
         ///*测试pageCtrl
         "testPage1Ctrl": '/App/Main/assets/js/controllers/testPage1Ctrl.js',
         "testPage2Ctrl": '/App/Main/assets/js/controllers/testPage2Ctrl.js',
+
+        //demo
+        "demo_map": '/App/Main/assets/js/controllers/demo/map.js',
 
 		//*** Filters
         ///*ui-select 下拉框过滤器

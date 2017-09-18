@@ -2,12 +2,8 @@
 /**
  * Clip-Two Main Controller
  */
-app.controller('AppCtrl', ['$rootScope', '$scope', '$state', '$translate', '$localStorage', '$window', '$document', '$timeout', 'cfpLoadingBar', '$location', 
-function ($rootScope, $scope, $state, $translate, $localStorage, $window, $document, $timeout, cfpLoadingBar, $location) {
-   
-
-
-
+app.controller('AppCtrl', ['$rootScope', '$scope', '$state', '$translate', '$localStorage', '$window', '$document', '$timeout', '$interval', 'cfpLoadingBar', '$location',
+function ($rootScope, $scope, $state, $translate, $localStorage, $window, $document, $timeout, $interval, cfpLoadingBar, $location) {
     // Loading bar transition
     // -----------------------------------
     var $win = $($window);
@@ -42,12 +38,11 @@ function ($rootScope, $scope, $state, $translate, $localStorage, $window, $docum
     // State not found
     $rootScope.$on('$stateNotFound', function (event, unfoundState, fromState, fromParams) {
         //$rootScope.loading = false;
-        console.log(unfoundState.to);
-        console.log(98989);
+        //console.log(unfoundState.to);
         // "lazy.state"
-        console.log(unfoundState.toParams);
+        //console.log(unfoundState.toParams);
         // {a:1, b:2}
-        console.log(unfoundState.options);
+        //console.log(unfoundState.options);
         // {inherit:false} + default options
     });
 
@@ -175,7 +170,6 @@ function ($rootScope, $scope, $state, $translate, $localStorage, $window, $docum
     //    }
     //};
     /************************************导航联动效果-end*************************************************/
-    $scope.menus = [];
     //查询子级菜单
     function jsonWhere(data, action) {
         if (action == null) return;
@@ -189,7 +183,6 @@ function ($rootScope, $scope, $state, $translate, $localStorage, $window, $docum
     }
     //处理结果数据
     function datas(data, b) {
-        console.log(data);
         $.each(data.authorizeMenu, function (i, row) {
             var obj = {};
             //var row = data.authorizeMenu[i];
@@ -208,7 +201,7 @@ function ($rootScope, $scope, $state, $translate, $localStorage, $window, $docum
         });
     };
     //循环子级菜单
-    function getSubMenu(allData,data, obj) {
+    function getSubMenu(allData, data, obj) {
         if (data.length > 0) {
             obj.children = [];
             $.each(data, function (i, item) {
@@ -216,17 +209,22 @@ function ($rootScope, $scope, $state, $translate, $localStorage, $window, $docum
                 subObj.uiSref = item.F_UrlAddress;
                 subObj.title = item.F_FullName;
                 subObj.icon = item.F_Icon;
+                subObj.id = item.Id;
                 subObj.children = [];
                 var childNodes = jsonWhere(allData.authorizeMenu, function (v) { return v.F_ParentId == item.Id });
                 if (childNodes.length > 0) {
-                    getSubMenu(allData,childNodes, subObj)
+                    getSubMenu(allData, childNodes, subObj)
                 }
                 obj.children.push(subObj);
             })
         }
 
-    }
-    http_ajax('', "/ClientData/GetClientDataJson", datas,'POST');
+    };
+    function getMenuFn() {
+        $scope.menus = [];
+        http_ajax('', "/ClientData/GetClientDataJson", datas, 'POST', "json");
+    };
+    getMenuFn();
 
     //设置内容高度
     $scope.getIframeH = function () {
@@ -241,4 +239,35 @@ function ($rootScope, $scope, $state, $translate, $localStorage, $window, $docum
     window.onresize = function () {
         $scope.getIframeH();
     };
+    localStorage.navDataState = "已使用";
+    $scope.getNewNav=function () {
+        var localHref = location.href;
+        var timer;
+        if (localHref.indexOf('SysManage/SystemModule') > -1) {
+            timer = $interval(function () {
+                if (localStorage.navDataState == "已更新") {
+                    getMenuFn();
+                    localStorage.navDataState = "已使用";
+                }
+            }, 100);
+        } else {
+            if (timer) {
+                $interval.cancel(timer);
+            }
+        }
+    }
+    $scope.getNewNav();
+
+    //退出登录
+    $scope.logout = function () {
+        var logInfo=confirm ("注：您确定要安全退出本次登录吗？");
+        if (logInfo) {
+            http_ajax('', "/Home/Logout", logoutFn, 'get', "");
+        }
+    };
+
+    function logoutFn(a,b) {
+        window.location.href = JSON.parse(a).ssoUrl;
+    };
+
 }]);

@@ -17,8 +17,15 @@
 <div class="navbar-collapse collapse" collapse="navbarCollapsed" ng-init="navbarCollapsed = true" off-click="navbarCollapsed = true" off-click-if='!navbarCollapsed' off-click-filter="#menu-toggler">
     <ul class="nav navbar-left" style="margin-top: 5px;" ng-if="!isMobileDevice">
         <li>
-            <a class="navbar-brand" ui-sref="app.dashboard">
+            <a class="navbar-brand" ui-sref="app.SysManage.SystemModule">
                 <img ng-src="{{app.layout.logo}}" alt="{{app.name}}" />
+            </a>
+        </li>
+    </ul>
+    <ul class="nav navbar-right" style="margin-top: 5px;">
+        <li>
+            <a class="navbar-brand" ng-click="logout()" style="padding:0;line-height:62px;font-size:14px;height: 65px;margin-top: -5px;padding: 0 20px;">
+                退出登录
             </a>
         </li>
     </ul>

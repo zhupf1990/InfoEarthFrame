@@ -1,0 +1,46 @@
+﻿<!-- /// controller:  'treeQueryCtrl' -  localtion: App/Main/assets/js/controllers/treeQueryCtrl.js /// -->
+<div class="container-fluid container-fullw container-full-stretch" ng-controller="demo_map">
+    <div class="row">
+
+        <!-- 左 -->
+        <div class="col-sm-3 col-md-3 col-lg-2 container-col-stretch">
+            <div class="panel panel-white panel-bottom0">
+                <div class="panel-heading border-bottom">
+                    <h4 class="panel-title">树列表</h4>
+                    <ul class="panel-heading-tabs border-light">
+                        <li class="panel-tools">
+                            <a tooltip="折叠" tooltip-placement="top" tooltip-append-to-body class="btn btn-transparent btn-sm" ng-click="close()"><i class="indented tree-icon icon-minus ti-minus" style="color:#007AFF"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body panel-fixed self_bottom">
+
+                    <div style="margin-top:6px; padding-bottom:10px; ">
+                        <abn-tree tree-data="treedata1" selected-data="selectedData" on-select="onSelected" expand-level="2" initial-selection="{{treedata1[0].children[1].label}}" tree-control="treeQueryCtrl"></abn-tree>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 右 -->
+        <div class="col-sm-9 col-md-9 col-lg-10 container_padding">
+            <!-- 上 -->
+            <div class="panel panel-white">
+                <open-map dataset="dataset"></open-map>
+            </div>
+
+            <!-- 下 -->
+            <div class="panel panel-white panel-fold panel-bottom0">
+                <panel-header panel-title="列表结果" fold-element="globalobj" add-click="addClick" del-click="delClick"></panel-header>
+                <div class="panel-body">
+                    <mic-data-table checkable checked-data="chedckedData" table-bordered tbody-height="200"
+                                    thead="查看详情链接 ,Price ,Clicks,Update"
+                                    td-params="{'name':{'type':'a','isclick':true,'isedit':false},'sex':{'type':'span','isclick':false},'age':{'type':'a','isclick':true,'iseditnum':true},'a':{'type':'a','isclick':true,'iseditnum':true}}" datasets="myDatass"
+                                    table-btn-html="[{'name': '修改', 'html': '&lt;a class=&quot;ti-pencil&quot; tooltip=&quot;修改&quot; tooltip-append-to-body &gt;&lt;/a&gt;'},{'name': '删除',  'html': '&lt;a class=&quot;ti-close&quot; tooltip=&quot;删除&quot; tooltip-append-to-body &gt;&lt;/a&gt;'}]"
+                                    table-btn-params="tabBtnParams" on-detail-click="myDataClickBak" on-page-change="pageChanged" pageing="pageing"></mic-data-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

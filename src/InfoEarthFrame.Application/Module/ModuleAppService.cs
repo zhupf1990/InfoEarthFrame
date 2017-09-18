@@ -32,6 +32,12 @@ namespace InfoEarthFrame.Module
             {
                 return sortCode.Value + 1;
             }
+
+            var query = _moduleRepository.GetAll();
+            var query8 = _moduleButtonRepository.GetAll();
+
+            var ss = query.Join(query8, t => t.Id, s => s.F_ModuleId, (t, s) => t).ToList(); ;
+           
             return 100001;
         }
 
@@ -50,6 +56,7 @@ namespace InfoEarthFrame.Module
         public bool ExistEnCode(string enCode, string keyValue)
         {
             var query = _moduleRepository.GetAll();
+            
             query = query.Where(t => t.F_EnCode == enCode);
             if (!string.IsNullOrEmpty(keyValue))
             {
@@ -96,6 +103,8 @@ namespace InfoEarthFrame.Module
                     moduleDTO.Id = Guid.NewGuid().ToString();
                     _moduleRepository.Insert(moduleDTO);
                 }
+                this.CurrentUnitOfWork.SaveChanges();
+                
                 _moduleButtonRepository.Delete(t => t.F_ModuleId.Equals(moduleDTO.Id));
 
                 if (moduleEntity.ModuleButtonDTOList != null)
@@ -112,6 +121,7 @@ namespace InfoEarthFrame.Module
                         _moduleButtonRepository.Insert(item);
                     }
                 }
+               
                 //_moduleColumnRepository.Delete(t => t.F_ModuleId.Equals(keyValue));
                 //if (moduleColumnList != null)
                 //{
@@ -128,6 +138,21 @@ namespace InfoEarthFrame.Module
 
                 throw;
             }
+        }
+
+        /// <summary>
+        /// 根据模块编号查询菜单
+        /// </summary>
+        /// <param name="moduleCode">模块编号</param>
+        /// <returns></returns>
+        public ModuleDTO GetEntityByModuleCode(string moduleCode)
+        {
+            var entity = _moduleRepository.GetAll().Where(t => t.F_EnCode == moduleCode).FirstOrDefault();
+            if(entity==null)
+            {
+                return new ModuleDTO();
+            }
+            return entity.MapTo<ModuleDTO>();
         }
     }
 }

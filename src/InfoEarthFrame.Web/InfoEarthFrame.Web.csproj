@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InfoEarthFrame.Web</RootNamespace>
     <AssemblyName>InfoEarthFrame.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -113,10 +113,6 @@
     <Reference Include="IdentityServer3.AccessTokenValidation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\IdentityServer3.AccessTokenValidation.2.1.0\lib\net45\IdentityServer3.AccessTokenValidation.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="iTelluro.SYS.Entity, Version=2.1.5156.19571, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\geoenvironmentmapsystem\01Solution\InfoEarthFrame\packages\iTelluro.SYS.Entity.2.1.5156.19571\lib\net40\iTelluro.SYS.Entity.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
@@ -3433,9 +3429,14 @@
     <Content Include="App\bower_components\flow.js\dist\flow.js" />
     <Content Include="App\bower_components\flow.js\dist\flow.min.js" />
     <Content Include="App\bower_components\font-awesome\.gitignore" />
+    <Content Include="App\bower_components\font-awesome\css\._font-awesome.min.css" />
     <Content Include="App\bower_components\font-awesome\css\font-awesome.css" />
     <Content Include="App\bower_components\font-awesome\css\font-awesome.min.css" />
+    <Content Include="App\bower_components\font-awesome\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="App\bower_components\font-awesome\css\learun-fonts\iconfont.css" />
+    <Content Include="App\bower_components\font-awesome\css\learun-fonts\iconfont.svg" />
     <Content Include="App\bower_components\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="App\bower_components\jquery-jsonp-master\jquery.jsonp.js" />
     <Content Include="App\bower_components\jquery-mobile\icons_mobiscroll.svg" />
     <Content Include="App\bower_components\jquery-mobile\mobiscroll.custom-3.0.0-beta4.js" />
     <Content Include="App\bower_components\jquery-mobile\mobiscroll.custom-3.0.0-beta4.min.css" />
@@ -4280,8 +4281,11 @@
     <Content Include="App\Main\assets\js\controllers\menuManage\menuManageCtrl.js" />
     <Content Include="App\Main\assets\js\controllers\testPage1Ctrl.js" />
     <Content Include="App\Main\assets\js\controllers\testPage2Ctrl.js" />
+    <Content Include="App\Main\assets\js\controllers\uploadCtrl.js" />
+    <Content Include="App\Main\assets\js\directives\bpUploadHtml5Directive.js" />
     <Content Include="App\Main\assets\js\directives\menuManage\menuManageDir.js" />
     <Content Include="App\Main\assets\js\directives\nav\navDirective.js" />
+    <Content Include="App\Main\assets\js\directives\uploadBreakpointDirective.js" />
     <Content Include="App\Main\assets\js\filters\propsFilter.js" />
     <Content Include="App\Main\assets\js\main.js" />
     <Content Include="App\Main\assets\js\subapp.js" />
@@ -4289,6 +4293,7 @@
     <Content Include="App\Main\assets\js\config.subrouter.js" />
     <Content Include="App\Main\assets\js\config.subconstant.js" />
     <Content Include="App\Main\assets\views\app.html" />
+    <Content Include="App\Main\assets\views\breakpointUpload.html" />
     <Content Include="App\Main\assets\views\menuManage\menuManage.html" />
     <Content Include="App\Main\subPage.html" />
     <Content Include="App\Main\assets\views\testPage1.html" />
@@ -4299,6 +4304,8 @@
     <Content Include="App\Main\assets\views\partials\top-navbar.html" />
     <Content Include="App\Main\assets\views\testPage2.html" />
     <Content Include="App_Data\InfoEarthFrame.Application.XML" />
+    <Content Include="cdn\v1.0\control.lib.min.css" />
+    <Content Include="cdn\v1.0\control.lib.min.js" />
     <Content Include="Content\bootstrap-cosmo.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -5411,6 +5418,14 @@
     <Content Include="PDFJSInNet\web\locale\zh-TW\viewer.properties" />
     <Content Include="PDFJSInNet\web\locale\zu\viewer.properties" />
     <Content Include="App\Main\assets\i18n\cn.json" />
+    <Content Include="App\bower_components\font-awesome\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="App\bower_components\font-awesome\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="App\bower_components\font-awesome\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="App\bower_components\font-awesome\css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="App\bower_components\font-awesome\css\fonts\FontAwesome.otf" />
+    <Content Include="App\bower_components\font-awesome\css\learun-fonts\iconfont.eot" />
+    <Content Include="App\bower_components\font-awesome\css\learun-fonts\iconfont.ttf" />
+    <Content Include="App\bower_components\font-awesome\css\learun-fonts\iconfont.woff" />
     <None Include="Properties\PublishProfiles\Jenkins.pubxml" />
     <None Include="Properties\PublishProfiles\XXX.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
@@ -6207,6 +6222,23 @@
     <Content Include="Scripts\sweetalert\sweet-alert.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\webuploader-0.1.5\Uploader.swf" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.css" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.custom.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.custom.min.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.fis.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.flashonly.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.flashonly.min.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.html5only.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.html5only.min.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.min.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.noimage.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.noimage.min.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.nolog.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.nolog.min.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.withoutimage.js" />
+    <Content Include="Scripts\webuploader-0.1.5\webuploader.withoutimage.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -6227,7 +6259,10 @@
     <Compile Include="Controllers\ModuleButtonController.cs" />
     <Compile Include="Controllers\ModuleColumnController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
+    <Compile Include="Controllers\MultimediaUploadController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Controllers\UploadForBreakpointController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -6246,6 +6281,7 @@
     <Content Include="Scripts\sweetalert\sweet-alert.scss" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\web.config" />
+    <Content Include="Scripts\webuploader-0.1.5\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

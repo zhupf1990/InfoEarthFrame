@@ -209,10 +209,10 @@ namespace Infoearth.Application.Web.Areas.AuthorizeManage.Controllers
         {
             try
             {
-            string msg= _appService.RemoveForm(keyValue);
-            return Content(msg);
+                string msg = _appService.RemoveForm(keyValue);
+                return Content(msg);
             }
-            catch(System.Exception ex)
+            catch (System.Exception ex)
             {
                 return Content(ex.Message);
             }
@@ -232,6 +232,17 @@ namespace Infoearth.Application.Web.Areas.AuthorizeManage.Controllers
             dto.ModuleButtonDTOList = moduleButtonList;
             _appService.SaveForm(dto);
             return Content("保存成功。");
+        }
+
+        /// <summary>
+        /// 根据模块编号查询菜单
+        /// </summary>
+        /// <param name="moduleCode">模块编号</param>
+        /// <returns></returns>
+        public ActionResult GetEntityByModuleCode(string moduleCoe)
+        {
+            ModuleDTO dto = _appService.GetEntityByModuleCode(moduleCoe);
+            return Content(dto.Id);
         }
         #endregion
     }

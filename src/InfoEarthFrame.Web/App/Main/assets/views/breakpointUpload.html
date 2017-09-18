@@ -1,0 +1,100 @@
+﻿<!-- start: UPLOADS ALL FILES -->
+<div class="container-fluid container-fullw" ng-controller="breakpointUploadCtrl">
+    <div class="panel panel-white" style="margin-bottom: 10px;">
+        <div class="panel-heading border-light">
+            <h4 class="panel-title">使用方法</h4>
+            <ul class="panel-heading-tabs border-light">
+                <li class="panel-tools">
+                    <a href="javascript:void(0)" ng-init="isshow1=false" ng-click="isshow1=!isshow1" tooltip="代码">
+                        <i class="fa fa-code fontsize16"></i>
+                    </a>
+                </li>
+                <li class="panel-tools">
+                    <ct-paneltool tool-refresh="load1"></ct-paneltool>
+                </li>
+            </ul>
+        </div>
+        <div class="panel-body" style="padding-top: 0px;">
+            <!-- 代码部分-->
+            <div ng-show="isshow1">
+                <tabset class="tabbable" type="underline">
+                    <tab class="tab-background" ng-repeat="item1 in tabContent1" heading="{{item1.heading}}">
+                        <div class="code" ace-mode="{{item1.aceMode}}" ace-theme="ace/theme/chrome" ace-gutter="true">
+                            {{item1.code}}
+                        </div>
+                    </tab>
+                </tabset>
+                <div style="border-top: solid 1px rgba(0, 0, 0, 0.07);">
+                </div>
+            </div>
+            <div style="margin-top: 20px;">
+                <!--<div mic-filereader-upload queue="queue"></div>
+                <a ng-click="aaaa()"> <i class="fa fa-code fontsize16"></i></a>
+                <div ng-repeat="(a,b) in queue">{{a}}-----{{b}}</div>-->
+
+                <bp-upload file-size="" file-type="jpg,png,gif,doc,docx,xls,xlsx" on-success="onLoadSuccess" on-del-all="onDelAll" on-del-single="del"></bp-upload>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-white">
+        <div class="panel-heading border-light">
+            <h4 class="panel-title">属性</h4>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped property-table" style="border-top: solid 1px rgba(0, 0, 0, 0.07) !important">
+                <thead>
+                    <tr>
+                        <th>属性名</th>
+                        <th>类型</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>file-size</td>
+                        <td>int</td>
+                        <td>限制文件大小,单位：Byte</td>
+                    <tr>
+                    <tr>
+                        <td>file-type</td>
+                        <td>string</td>
+                        <td>限制文件的类型，多个扩展名之用逗号分隔，例如: jpg,png,gif</td>
+                    <tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-white">
+        <div class="panel-heading border-light">
+            <h4 class="panel-title">事件</h4>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped property-table" style="border-top: solid 1px rgba(0, 0, 0, 0.07) !important">
+                <thead>
+                    <tr>
+                        <th>事件名</th>
+                        <th>描述</th>
+                        <th>例如</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>on-success</td>
+                        <td>文件上传成功时触发，返回文件的属性信息。</td>
+                        <td>on-success="onLoadSuccess"</td>
+                    </tr>
+                    <tr>
+                        <td>on-del-all</td>
+                        <td>成功删除所有附件时触发。</td>
+                        <td>on-del-all="onDelAll"</td>
+                    </tr>
+                    <tr>
+                        <td>on-del-single</td>
+                        <td>成功删除单个附件时触发,返回被删除文件的属性信息。</td>
+                        <td>on-del-single="del"</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

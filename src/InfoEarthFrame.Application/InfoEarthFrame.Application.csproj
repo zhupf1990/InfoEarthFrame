@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InfoEarthFrame</RootNamespace>
     <AssemblyName>InfoEarthFrame.Application</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -130,9 +130,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Area\AreaAppService.cs" />
+    <Compile Include="Area\Dtos\AreaDto.cs" />
+    <Compile Include="Area\Dtos\AreaOutput.cs" />
+    <Compile Include="Area\IAreaAppService.cs" />
+    <Compile Include="Attachment\AttachmentAppService.cs" />
+    <Compile Include="Attachment\Dtos\AttachmentDTO.cs" />
+    <Compile Include="Attachment\Dtos\AttachmentInput.cs" />
+    <Compile Include="Attachment\Dtos\MultimediaAttachmentInput.cs" />
+    <Compile Include="Attachment\IAttachmentAppService.cs" />
+    <Compile Include="Disaster\DisasterService.cs" />
+    <Compile Include="Disaster\Dtos\DisasterDto.cs" />
+    <Compile Include="Disaster\Dtos\DisasterInput.cs" />
+    <Compile Include="Disaster\Dtos\DisasterOutput.cs" />
+    <Compile Include="Disaster\Dtos\QueryDisasterInput.cs" />
+    <Compile Include="Disaster\IDisasterService.cs" />
     <Compile Include="DtoMappings.cs" />
+    <Compile Include="HazardsType\Dtos\HazardsTypeDto.cs" />
+    <Compile Include="HazardsType\HazardsTypeAppService.cs" />
+    <Compile Include="HazardsType\IHazardsTypeAppService.cs" />
     <Compile Include="InfoEarthFrameApplicationModule.cs" />
     <Compile Include="InfoEarthFrameAppServiceBase.cs" />
+    <Compile Include="KneeCoordinateHandler\Dtos\KneeCoordinateInput.cs" />
+    <Compile Include="KneeCoordinateHandler\Dtos\KneeCoordinateOutput.cs" />
+    <Compile Include="KneeCoordinateHandler\IKneeCoordinateAppService.cs" />
+    <Compile Include="KneeCoordinateHandler\KneeCoordinateAppService.cs" />
+    <Compile Include="LayerManager\Dtos\LayerManagerDto.cs" />
+    <Compile Include="LayerManager\Dtos\LayerManagerInput.cs" />
+    <Compile Include="LayerManager\Dtos\LayerManagerOutput.cs" />
+    <Compile Include="LayerManager\Dtos\QueryLayerManagerInput.cs" />
+    <Compile Include="LayerManager\ILayerManagerAppService.cs" />
+    <Compile Include="LayerManager\LayerManagerAppService.cs" />
     <Compile Include="Module\Dtos\ModuleButtonDTO.cs" />
     <Compile Include="Module\Dtos\ModuleColumnDTO.cs" />
     <Compile Include="Module\Dtos\ModuleDTO.cs" />
@@ -143,7 +171,25 @@
     <Compile Include="Module\ModuleAppService.cs" />
     <Compile Include="Module\ModuleButtonAppService.cs" />
     <Compile Include="Module\ModuleColumnAppService.cs" />
+    <Compile Include="Multimedia\Dtos\ModuleInfoInput.cs" />
+    <Compile Include="Multimedia\Dtos\MultimediaOutput.cs" />
+    <Compile Include="Multimedia\Dtos\MultimediaTypeDto.cs" />
+    <Compile Include="Multimedia\Dtos\MultimediaTypeInput.cs" />
+    <Compile Include="Multimedia\IMultimediaAppService.cs" />
+    <Compile Include="Multimedia\MultimediaAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Slope\Dtos\QuerySlopeInput.cs" />
+    <Compile Include="Slope\Dtos\SlopeDto.cs" />
+    <Compile Include="Slope\Dtos\SlopeInput.cs" />
+    <Compile Include="Slope\Dtos\SlopeOutput.cs" />
+    <Compile Include="Slope\ISlopeAppService.cs" />
+    <Compile Include="Slope\SlopeAppService.cs" />
+    <Compile Include="Tree\Dtos\TreeDTO.cs" />
+    <Compile Include="Tree\ITreeAppService.cs" />
+    <Compile Include="Tree\TreeAppService.cs" />
+    <Compile Include="UploadFile\Dtos\UploadDTO.cs" />
+    <Compile Include="UploadFile\IUploadFileAppService.cs" />
+    <Compile Include="UploadFile\UploadFileAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

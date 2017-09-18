@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InfoEarthFrame</RootNamespace>
     <AssemblyName>InfoEarthFrame.EntityFramework</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -118,11 +118,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityFramework\ExpressionExtensions.cs" />
     <Compile Include="EntityFramework\InfoEarthFrameDbContext.cs" />
+    <Compile Include="EntityFramework\Repositories\AttachmentRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\DisasterRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\HazardsTypeRepository.cs" />
     <Compile Include="EntityFramework\Repositories\InfoEarthFrameRepositoryBase.cs" />
+    <Compile Include="EntityFramework\Repositories\LayerManagerRepository.cs" />
     <Compile Include="EntityFramework\Repositories\ModuleButtonRepository.cs" />
     <Compile Include="EntityFramework\Repositories\ModuleColumnRepository.cs" />
     <Compile Include="EntityFramework\Repositories\ModuleRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\MultimediaType.cs" />
+    <Compile Include="EntityFramework\Repositories\SlopeRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\TreeTestEntityRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="InfoEarthFrameDataModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -20,7 +20,7 @@ namespace InfoEarthFrame
             DynamicApiControllerBuilder
                 .ForAll<IApplicationService>(typeof(InfoEarthFrameApplicationModule).Assembly, "app/V1").WithConventionalVerbs().WithFilters(new WebApiTrackerAttribute())
                 .Build();
-
+            //DynamicApiControllerBuilder.For()
             //设置跨域
             EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");
             cors.SupportsCredentials = true;

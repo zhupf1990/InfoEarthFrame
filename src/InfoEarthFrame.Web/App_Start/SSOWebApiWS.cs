@@ -209,5 +209,71 @@ namespace InfoEarthFrame.Web
                 throw new Exception(ex.Message);
             }
         }
+
+        /// <summary>
+        /// 获取授权菜单按钮
+        /// </summary>
+        /// <param name="businessCode">业务系统Code</param>
+        /// <returns></returns>
+        public List<string> GetMenuButtonByBusinessCodeAndUserID(string businessCode)
+        {
+            if (businessCode == null) throw new ArgumentNullException("businessCode");
+            try
+            {
+                var handler = new HttpClientHandler() { AutomaticDecompression = DecompressionMethods.GZip };
+                HttpClient httpClient = new HttpClient(handler);
+                string token = WebHelper.GetCookie("Token");
+                token = HttpUtility.UrlDecode(token);
+                if (token.Contains(','))
+                {
+                    token = token.Split(',')[0];
+                }
+                httpClient.BaseAddress = new Uri(SSOUrl);
+                httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                //await异步等待回应
+                var response = httpClient.GetAsync("api/BusinessMenuApi/GetMenuButtonByBusinessCodeAndUserID/" + businessCode).Result;
+                //确保HTTP成功状态值
+                response.EnsureSuccessStatusCode();
+                //await异步读取最后的JSON（注意此时gzip已经被自动解压缩了，因为上面的AutomaticDecompression = DecompressionMethods.GZip）
+                var menus = (response.Content.ReadAsStringAsync().Result);
+
+                return JsonConvert.DeserializeObject<List<string>>(menus);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public string GetAreaListJson(string parentId)
+        {
+            try
+            {
+                var handler = new HttpClientHandler() { AutomaticDecompression = DecompressionMethods.GZip };
+                HttpClient httpClient = new HttpClient(handler);
+                string token = WebHelper.GetCookie("Token");
+                token = HttpUtility.UrlDecode(token);
+                if (token.Contains(','))
+                {
+                    token = token.Split(',')[0];
+                }
+                httpClient.BaseAddress = new Uri(SSOUrl);
+                httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+
+                //await异步等待回应
+                var response = httpClient.GetAsync("api/DistrictListApi/GetAreaListJson/" + parentId).Result;
+                //确保HTTP成功状态值
+                response.EnsureSuccessStatusCode();
+                //await异步读取最后的JSON（注意此时gzip已经被自动解压缩了，因为上面的AutomaticDecompression = DecompressionMethods.GZip）
+                var result = ((response.Content.ReadAsStringAsync().Result));
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

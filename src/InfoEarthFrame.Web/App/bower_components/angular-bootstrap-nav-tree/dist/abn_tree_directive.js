@@ -71,7 +71,7 @@
                            '  ng-class="\'level-\' + {{ row.level }} +(row.branch.showCheckbox ? \'\' : \' margin-sx5-a \'+ (row.branch.selected ? (row.branch.isHidActive===true ? \'\':\' active\'):\'\')) + \' \' +row.classes.join(\' \')" ' +
                            '  class="abn-tree-row" >' +
                            '     <a ng-click="user_clicks_branch(row.branch,null,$event)">' +
-                           '          <i ng-class="row.tree_icon2" ng-if="row.children.length>0"  ng-click="row.branch.expanded = !row.branch.expanded" ' +
+                           '          <i ng-class="row.tree_icon2"  ng-click="row.branch.expanded = !row.branch.expanded" ' +
                            '               class="indented tree-icon">' +
                            '          </i>' +
                            '          <i ng-class="row.tree_icon"' +
@@ -496,7 +496,8 @@
                               branch.isLeaf = false;
                           }
                           if (!branch.noLeaf && (!branch.children || branch.children.length === 0)) {
-                              tree_icon = attrs.iconLeaf;
+                              //tree_icon = attrs.iconLeaf;
+                              tree_icon = "";
                               branch.isLeaf = true;
                               if (__indexOf.call(branch.classes, "leaf") < 0) {
                                   branch.classes.push("leaf");

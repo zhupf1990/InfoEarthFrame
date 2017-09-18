@@ -6,8 +6,19 @@
 </div>
 <!-- end: Show Or Hide Menu -->
 <style>
-    
+    .item_conA {
+        padding:0px !important;
+    }
+    .item_conDiv {
+        padding:10px 15px 10px 52px !important;
+        width:100%;
+        height:100%;
+    }
 .sub-menu i.mdi{
+    padding: 3px 15px;
+    font-size: 20px !important;
+}
+.sub-menu i.fa{
     padding: 3px 15px;
     font-size: 20px !important;
 }
@@ -18,7 +29,7 @@
 
     ul.sub-menu li ul.sub-menu li a{
 
-padding-left:100px !important;
+    padding-left:100px !important;
 
     }
     
@@ -47,8 +58,8 @@ padding-left:100px !important;
                 </div>
             </div>
         </a>
-        <a ng-if="item.children.length===0" ui-sref="{{item.uiSref}}">
-            <div class="item-content">
+        <a ng-if="item.children.length===0" ui-sref="{{item.uiSref}}" data-id="{{item.id}}">
+            <div class="item-content"  ng-click="getNewNav()">
                 <div class="item-media">
                     <i class="{{item.icon}}"></i>
                 </div>
@@ -60,17 +71,22 @@ padding-left:100px !important;
         </a>
         <!--ng-if判断----end-->
         <ul class="sub-menu" ng-show="item.children.length>0">
-            <li ng-repeat="bitem in item.children" ui-sref-active="active">
+            <li ng-repeat="bitem in item.children" ui-sref-active="active" ng-class="{'active open':$state.includes(bitem.uiSref)}">
                 <a ng-if="bitem.children.length>0" href="javascript:void(0)">
                     <i class="{{bitem.icon}}"></i><span class="title">{{bitem.title}}</span>
                 </a>
-                <a ng-if="bitem.children.length===0" ui-sref="{{bitem.uiSref}}">
-                    <i class="{{bitem.icon}}"></i><span class="title">{{bitem.title}}</span>
+                <a ng-if="bitem.children.length===0" ui-sref="{{bitem.uiSref}}" style="padding-left:0px !important;" class="item_conA" data-id="{{bitem.id}}">
+                    <div class="item_conDiv" ng-click="getNewNav()">
+                        <i class="{{bitem.icon}}"></i><span class="title">{{bitem.title}}</span>
+                    </div>
                 </a>
                 <ul class="sub-menu" ng-show="bitem.children.length>0">
-                    <li ng-repeat="citem in bitem.children" ui-sref-active="active">
+                    <li ng-repeat="citem in bitem.children" ui-sref-active="active" ng-class="{'active open':$state.includes(citem.uiSref)}">
 
-                        <a ui-sref="{{citem.uiSref}}"><span class="title">{{citem.title}}</span>
+                        <a ui-sref="{{citem.uiSref}}" data-id="{{citem.id}}" class="item_conA">
+                            <div class="item_conDiv" ng-click="getNewNav()">
+                                <span class="title">{{citem.title}}</span>
+                            </div>
                         </a>
                     </li>
                 </ul>

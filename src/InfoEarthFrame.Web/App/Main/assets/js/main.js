@@ -76,7 +76,7 @@ function (cfpLoadingBarProvider) {
 
 }]);
 
-function http_ajax(params, url, backfun, type) {
+function http_ajax(params, url, backfun, type, dataType) {
     //var token = document.getElementById("token").value;
     if (!type) {
         type="GET"
@@ -85,7 +85,7 @@ function http_ajax(params, url, backfun, type) {
         data: params,
         type: type,
         url: url,
-        dataType: "json",
+        dataType: dataType,
         error: function (XHR, textStatus, errorThrown) {
             console.log(XHR);
             console.log(textStatus);

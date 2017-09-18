@@ -35,9 +35,9 @@ subapp.constant('JS_REQUIRES', {
         'wang-editor': ['/App/bower_components/wangEditor/js/wangEditor.js', '/App/bower_components/wangEditor/js/highlight.min.js', '/App/bower_components/wangEditor/css/wangEditor.min.css'],
 
         //*** openlayer 
-        'openlayerjs': ['../Scripts/openlayer/mapScript/ol.js', '../Scripts/openlayer/mapCss/ol.css'],
-        'itellurojs': '../Scripts/openlayer/mapScript/itelluro.ol.js',
-        'measuretooljs': '../Scripts/openlayer/mapScript/measuretool.js',
+        'openlayerjs': ['../../Scripts/openlayer/mapScript/ol.js', '../../Scripts/openlayer/mapCss/ol.css'],
+        'itellurojs': ['../../Scripts/openlayer/mapScript/itelluro.ol.js', '../../Scripts/openlayer/mapScript/itelluro.tianditu.js' ],
+        'measuretooljs': '../../Scripts/openlayer/mapScript/measuretool.js',
 
 
         //*** Controllers
@@ -45,10 +45,22 @@ subapp.constant('JS_REQUIRES', {
         "testPage1Ctrl": '/App/Main/assets/js/controllers/testPage1Ctrl.js',
         "testPage2Ctrl": ['/App/Main/assets/js/controllers/testPage2Ctrl.js'],
         "menuManage": ['/App/Main/assets/css/menuManage/menuManage.css', '/App/Main/assets/js/controllers/menuManage/menuManageCtrl.js', '/App/Main/assets/js/directives/menuManage/menuManageDir.js'],
+        "wizardCtrl": ['/App/Main/assets/js/controllers/menuManage/wizardCtrl.js'],
+        //*** 引用webuploader的js和css
+        'webuploader': ['../../Scripts/webuploader-0.1.5/webuploader.js', '../../Scripts/webuploader-0.1.5/webuploader.css'],
+        'micFilereaderUpload': '/App/Main/assets/js/directives/uploadBreakpointDirective.js',
+        'uploadCtrl': '/App/Main/assets/js/controllers/uploadCtrl.js',
+        'bpUploadHtml': '/App/Main/assets/js/directives/bpUploadHtml5Directive.js',
 
 		//*** Filters
         ///*ui-select 下拉框过滤器
         'propsFilter': '/App/Main/assets/js/filters/propsFilter.js',
+
+        //demo
+        "demo_map": '/App/Main/assets/js/controllers/demo/map.js',
+
+        //步骤框
+        'wizard': ['/App/bower_components/wizard/wizard.js', '/App/bower_components/wizard/wizard.css']
     },
     //*** angularJS Modules
     modules: [

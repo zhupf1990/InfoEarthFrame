@@ -79,11 +79,32 @@ namespace InfoEarthFrame.Web.Controllers
         private object GetALLModuleButtonData()
         {
             var data = _appButtonService.GetList();
-            var dataModule = data.Distinct(new Comparint<ModuleButtonDTO>("F_ModuleId"));
+            List<ModuleButtonDTO> list = new List<ModuleButtonDTO>();
+            list = data.ToList();
+            string token = WebHelper.GetCookie("Token");
+            token = HttpUtility.UrlDecode(token);
+            if (token.Contains(','))
+            {
+                string userName = token.Split(',')[1];
+                if (userName != "System")
+                {
+                    list.Clear();
+                    List<string> mlist = _ssoWS.GetMenuButtonByBusinessCodeAndUserID(_busniessCode);
+                    foreach (var item in data)
+                    {
+                        if (mlist.Contains(item.Id))
+                        {
+                            list.Add(item);
+                        }
+                    }
+                }
+            }
+
+            var dataModule = list.Distinct(new Comparint<ModuleButtonDTO>("F_ModuleId"));
             Dictionary<string, object> dictionary = new Dictionary<string, object>();
             foreach (ModuleButtonDTO item in dataModule)
             {
-                var buttonList = data.Where(t => t.F_ModuleId.Equals(item.F_ModuleId));
+                var buttonList = list.Where(t => t.F_ModuleId.Equals(item.F_ModuleId));
                 dictionary.Add(item.F_ModuleId, buttonList);
             }
             return dictionary;

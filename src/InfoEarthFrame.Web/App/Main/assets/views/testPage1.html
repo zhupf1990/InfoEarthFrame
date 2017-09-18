@@ -1,61 +1,141 @@
 ﻿<!-- test 页面用例 -->
-    <div class="container-fluid" ng-controller="testPage1Ctrl">
-        <div class="row" style="text-align:center;padding-top:10px;" id="pdfTest">
-            <!--<img src="./assets/images/shine.png" alt="Alternate Text" />-->
-            <div class="panel panel-transparent">
-                <div>
-                    <button class="btn btn-primary" ng-click="demo4();">PDF</button>
-                </div>
-                <div>
-                    <button class="btn btn-primary" ng-click="demo5();">Excel测试</button>
-                </div>
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        消息对话框
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <p class="margin-bottom-30">
-                        常规提示框，比如业务校验提示信息等。
-                    </p>
-                    <button class="btn btn-primary" ng-click="demo1();">
-                        Open Message
-                    </button>
-                </div>
-            </div>
-            <div class="panel panel-transparent">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        警示对话框
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <p class="margin-bottom-30">
-                        错误、禁止操作等，告诫用户的提示框。
-                    </p>
-                    <button class="btn btn-primary" ng-click="demo2();">
-                        Open Message
-                    </button>
-                </div>
-            </div>
-            <div class="panel panel-transparent">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        确认对话框
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <p class="margin-bottom-30">
-                        常规提示框，需要用户确认的操作框。
-                    </p>
-                    <button class="btn btn-primary" ng-click="demo3();">
-                        Open Message
-                    </button>
-                </div>
-                <div class="panel-body">
-                    <img src="/App/Main/assets/images/shine.png" />
-                </div>
-            </div>
+
+
+<style type="text/css">
+    .form_text{
+
+        width:100px;
+        text-align:right;
+
+    }
+    .form_text1 {
+        width: 100px;
+        text-align: right;
+    }
+    .ui-select-width {
+        width: 300px;
+    }
+    .ui-select-width1 {
+        width: 200px;
+    }
+    .form_input{
+
+        padding:10px 0;
+    }
+    
+    
+    
+    
+     .ui-select-height {
+        height: 200px;
+    }
+
+
+</style>
+    <div class="container-fluid" ng-controller="testPage1Ctrl" style="height:100%;">
+        <div class="row" style="padding:10px; background:#fff;">
+         
+            <table class="form">
+                <tbody>
+                    <tr>
+                        <td class="form_text">省：</td>
+                        <td>
+                            <ui-select class="ui-select-width" ng-model="dtSelected1.selected" theme="select2" title="请选择..." on-select="provinceData()">
+                                <ui-select-match placeholder="请选择...">{{$select.selected.F_AreaName}}</ui-select-match>
+                                <ui-select-choices class="ui-select-height" repeat="p in combData1| propsFilter: {F_AreaName: $select.search, F_AreaCode: $select.search}">
+                                    <div ng-bind-html="p.F_AreaName | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+                         
+                        </td>
+                        </tr>
+                  
+                    <tr>
+                        <td class="form_text">市：</td>
+                        <td class="form_input">
+                            <ui-select class="ui-select-width" ng-model="dtSelected2.selected" theme="select2" title="请选择..." on-select="cityData()">
+                                <ui-select-match placeholder="请选择...">{{$select.selected.F_AreaName}}</ui-select-match>
+                                <ui-select-choices class="ui-select-height" repeat="p in combData2| propsFilter: {F_AreaName: $select.search, F_AreaCode: $select.search}">
+                                    <div ng-bind-html="p.F_AreaName | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form_text">县（区）：</td>
+                        <td class="form_input">
+                            <ui-select class="ui-select-width" ng-model="dtSelected3.selected" theme="select2" title="请选择..." on-select="countryData()">
+                                <ui-select-match placeholder="请选择...">{{$select.selected.F_AreaName}}</ui-select-match>
+                                <ui-select-choices class="ui-select-height" repeat="p in combData3| propsFilter: {F_AreaName: $select.search, F_AreaCode: $select.search}">
+                                    <div ng-bind-html="p.F_AreaName | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <td class="form_text">乡镇：</td>
+                        <td class="form_input">
+                            <ui-select class="ui-select-width" ng-model="dtSelected4.selected" theme="select2" title="请选择...">
+                                <ui-select-match placeholder="请选择...">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices class="ui-select-height" repeat="p in combData4| propsFilter: {name: $select.search, email: $select.search}">
+                                    <div ng-bind-html="p.name | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+                        </td>
+                    </tr>-->
+                    </tbody>
+                </table>
+
+
+
+
+            <table class="form">
+                <tbody>
+                    <tr> 
+                        <td class="form_text1">行政区划：</td>                     
+                        <td>
+                            <ui-select class="ui-select-width1" ng-model="dtSelected4.selected" theme="select2" title="请选择..." on-select="provinceData1()">
+                                <ui-select-match placeholder="请选择...">{{$select.selected.F_AreaName}}</ui-select-match>
+                                <ui-select-choices class="ui-select-height" repeat="p in combData4| propsFilter: {F_AreaName: $select.search, F_AreaCode: $select.search}">
+                                    <div ng-bind-html="p.F_AreaName | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+                        </td>
+                        <td class="form_input">
+                            <ui-select class="ui-select-width1" ng-model="dtSelected5.selected" theme="select2" title="请选择..." on-select="cityData1()">
+                                <ui-select-match placeholder="请选择...">{{$select.selected.F_AreaName}}</ui-select-match>
+                                <ui-select-choices class="ui-select-height" repeat="p in combData5| propsFilter: {F_AreaName: $select.search, F_AreaCode: $select.search}">
+                                    <div ng-bind-html="p.F_AreaName | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+                        </td>
+                        <td class="form_input">
+                            <ui-select class="ui-select-width1" ng-model="dtSelected6.selected" theme="select2" title="请选择..." on-select="countryData1()">
+                                <ui-select-match placeholder="请选择...">{{$select.selected.F_AreaName}}</ui-select-match>
+                                <ui-select-choices class="ui-select-height" repeat="p in combData6| propsFilter: {F_AreaName: $select.search, F_AreaCode: $select.search}">
+                                    <div ng-bind-html="p.F_AreaName | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+                        </td>
+                        <!--<td class="form_input">
+                            <ui-select class="ui-select-width1" ng-model="dtSelected4.selected" theme="select2" title="请选择...">
+                                <ui-select-match placeholder="请选择...">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices class="ui-select-height" repeat="p in combData4| propsFilter: {name: $select.search, email: $select.search}">
+                                    <div ng-bind-html="p.name | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+                        </td>-->
+                    </tr>             
+                </tbody>
+            </table>
+
         </div>
     </div>
 
